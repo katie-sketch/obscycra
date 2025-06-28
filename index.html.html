@@ -1,0 +1,214 @@
+<!-- OBSCYCRA Homepage Code Skeleton -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBSCYCRA | The Archive</title>
+
+  <!-- SCARY FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: 'Special Elite', monospace;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff1c1c;
+      border-radius: 5px;
+    }
+
+    .grainy-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png') repeat,
+                  url('https://cdn.pixabay.com/photo/2016/04/24/16/55/spider-web-1358086_1280.png') no-repeat center;
+      background-size: cover;
+      animation: grainShift 60s linear infinite;
+      opacity: 0.05;
+    }
+
+    @keyframes grainShift {
+      0% { background-position: 0 0, center; }
+      100% { background-position: 1000px 1000px, center; }
+    }
+
+    .bat {
+      position: absolute;
+      width: 40px;
+      height: auto;
+      top: 10%;
+      left: -50px;
+      animation: flyBat 15s linear infinite;
+    }
+
+    @keyframes flyBat {
+      0% { transform: translateX(0) rotate(0); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: translateX(50vw) translateY(-20px) rotate(20deg); }
+      90% { opacity: 1; }
+      100% { transform: translateX(100vw) rotate(-10deg); opacity: 0; }
+    }
+
+    .main-section {
+      width: 100vw;
+      text-align: center;
+      padding: 60px 0;
+      box-sizing: border-box;
+    }
+
+    .obscycra-title {
+      font-family: 'Creepster', cursive;
+      font-size: 5rem;
+      color: #ff1c1c;
+      letter-spacing: 2px;
+      animation: flickerTitle 6s infinite alternate;
+    }
+
+    @keyframes flickerTitle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      40% { opacity: 0.4; transform: scale(1.02); }
+      50% { opacity: 0.1; transform: scale(0.98); }
+      60% { opacity: 1; transform: scale(1); }
+    }
+
+    .glitched-tagline {
+      font-size: 1.3rem;
+      margin: 20px auto 40px;
+      color: #ccc;
+      font-family: 'Special Elite', monospace;
+    }
+
+    .glitched-tagline .redacted {
+      background: #0a0a0a;
+      color: transparent;
+      border-bottom: 2px solid #ff1c1c;
+      display: inline-block;
+      padding: 0 10px;
+      letter-spacing: 2px;
+    }
+
+    .intro-file {
+      max-width: 80%;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-left: 3px solid #ff1c1c;
+      box-shadow: 0 0 20px rgba(255, 28, 28, 0.2);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .file-section {
+      width: 80%;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid #ff1c1c;
+      box-shadow: 0 0 10px rgba(255, 28, 28, 0.3);
+      font-family: 'Special Elite', monospace;
+    }
+
+    .file-header {
+      background: #0a0a0a;
+      padding: 10px 20px;
+      color: #ff1c1c;
+      font-weight: bold;
+      cursor: pointer;
+      border-bottom: 1px solid #ff1c1c;
+      text-align: left;
+      transition: background 0.3s;
+    }
+
+    .file-header:hover {
+      background: #1a1a1a;
+    }
+
+    .file-content {
+      display: none;
+      padding: 20px;
+      color: #e0e0e0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .vena-warning {
+      color: #ff1c1c;
+      font-family: 'Special Elite', monospace;
+      animation: flicker 5s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grainy-bg"></div>
+  <img src="https://www.svgrepo.com/show/303744/bat-flying.svg" class="bat" alt="bat" />
+
+  <section class="main-section">
+    <h1 class="obscycra-title">OBSCYCRA</h1>
+
+    <p class="glitched-tagline">An archive of everything you <span class="redacted">weren’t</span> supposed to know.</p>
+
+    <div class="intro-file">
+      <p>I built OBSCYCRA to let the archive out of my head.<br><br>
+      This is where the patterns live.<br>
+      The sightings. The stories. The blood trails. The truths that never made the news.<br><br>
+      Read with caution.<br>
+      Each case has a pulse.</p>
+    </div>
+  </section>
+
+  <!-- Entry 001 File Section -->
+  <section class="file-section">
+    <div class="file-header" id="entryToggle">
+      <span>📂 Entry 001 – Why OBSCYCRA Exists</span>
+    </div>
+    <div class="file-content" id="entry001">
+      <p>
+        Everything on OBSCYCRA is real. No creepypasta, no made-up lore, no half-baked stories for clicks.<br><br>
+        Every entry is based on verifiable accounts, ancient records, classified leaks, or legitimate unsolved archives.<br><br>
+        I built this archive because someone had to.<br><br>
+        If you're here to gawk, you'll probably leave. But if you're here to understand — welcome to the truth they buried.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="vena-warning">THIS ARCHIVE IS MONITORED BY V.E.N.A. UNAUTHORIZED ACCESS WILL BE LOGGED.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.getElementById('entryToggle');
+      const content = document.getElementById('entry001');
+      toggle.addEventListener('click', function() {
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
