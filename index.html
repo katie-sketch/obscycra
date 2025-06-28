@@ -48,13 +48,35 @@
     }
 
     .bat {
-      position: absolute;
-      width: 40px;
-      height: auto;
-      top: 10%;
-      left: -50px;
-      animation: flyBat 15s linear infinite;
-    }
+  position: absolute;
+  top: 10%;
+  left: -60px;
+  width: 50px;
+  height: auto;
+  animation: flyBat 15s linear infinite;
+  z-index: 1;
+}
+
+@keyframes flyBat {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-20px) rotate(20deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
 
     @keyframes flyBat {
       0% { transform: translateX(0) rotate(0); opacity: 0; }
@@ -166,7 +188,10 @@
 
 <body>
   <div class="grainy-bg"></div>
-  <img src="https://www.svgrepo.com/show/303744/bat-flying.svg" class="bat" alt="bat" />
+  <svg class="bat" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#ff1c1c">
+  <path d="M32 0c4 8 12 8 16 0 4 8 12 8 16 0-2 14-6 26-16 28 2 2 4 4 4 8-4 0-8-4-12-4s-8 4-12 4c0-4 2-6 4-8-10-2-14-14-16-28 4 8 12 8 16 0z"/>
+</svg>
+
 
   <section class="main-section">
     <h1 class="obscycra-title">OBSCYCRA</h1>
